@@ -35,3 +35,29 @@ específicas para un proyecto en particular, sin afectar al sistema global
 'git checkout "nombre_de_rama"' --> me mueve a la rama que mencione
 'git checkout -b "nombre_de_nueva_rama" --> para crear una nuva rama y posicionarme en ella 
 
+---- ahora tenes que ver el video anterior para hacer carpeta project-----
+
+## creamos project
+
+-creo una carpeta 'project'
+- 'mkdir project'
+-  accedemos a la carpeta 'project'
+- ' cd project'
+- crear el proyecto Django
+- 'django-admin startproject config .'
+- ejecutar el servidor:
+- 'python manage.py runserver'
+
+## creamos una aplicación:
+1-estar ubicado dentro de 'project' pero fuera de 'config'
+- 'cd ..'
+- 'ls'
+2- crear una carpeta para que contenga la apps
+- 'md apps'
+3- acceder a la carpeta 'apps'
+- 'cd apps'
+4- crear la aplicación Django con el nombre que desee
+- 'django-admin startapp core'
+
+
+
