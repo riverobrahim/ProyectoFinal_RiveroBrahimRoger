@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirtualPlanet</title>
+
+</head>
+<body>
+
+    <h1>Proyecto Final {{ app_name }}</h1>
+    <h2>cliente</h2>
+    <h3>Paises: lista</h3>
+
+    <ul>
+        {% for pais in Paises %}
+          <li>{{ pais.nombre }}</li>   
+        {% endfor %}
+    </ul>
+
+    <button><a href="{% url 'cliente:pais_list' %}">lista_de_paises</a></button> 
+    <button><a href="{% url 'core:index' %}">inicio</a></button> 
+    
+</body>
+</html>

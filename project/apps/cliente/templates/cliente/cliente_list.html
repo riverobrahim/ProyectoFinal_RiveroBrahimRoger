@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirtualPlanet</title>
+
+</head>
+<body>
+
+    <h1>Proyecto Final {{ app_name }}</h1>
+    <h2>cliente</h2>
+    <h3>cliente: lista</h3>
+
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Nacimiento</th>    
+
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.nombre}}</td>
+                <td>{{ cliente.Apellido}} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    
+
+    <button><a href="{% url 'cliente:pais_list' %}">lista_de_paises</a></button> 
+    <button><a href="{% url 'core:index' %}">inicio</a></button> 
+    
+</body>
+</html>

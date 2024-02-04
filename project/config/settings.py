@@ -48,8 +48,9 @@ INSTALLED_APPS = [
 
 #Apps Propias (donde vas a guar dar,nombrar a cad app que vayas creando)
 
-INSTALLED_APPS = [
+INSTALLED_APPS += [
     "core",
+    "cliente",
 ]
 
 MIDDLEWARE = [
@@ -118,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'America/Argentina/Buenos Aires'
+TIME_ZONE = 'America/Argentina/Buenos_Aires'
 
 USE_I18N = True
 

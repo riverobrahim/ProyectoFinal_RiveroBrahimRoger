@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AppWeb</title>
+    <title>VirtualPlanet</title>
 
 </head>
 <body>
 
-    <h1>Proyecto Final</h1>
+    <h1>Proyecto Final {{ app_name }}</h1>
     <h2>INICIO</h2>
+
+    <button><a href="{% url 'cliente:index' %}">Cliente</a></button> 
+    <button><a href="{% url 'admin:index' %}">Administración</a></button>
+
 
 </body>
 </html>

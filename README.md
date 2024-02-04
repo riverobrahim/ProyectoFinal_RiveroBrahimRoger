@@ -59,5 +59,97 @@ específicas para un proyecto en particular, sin afectar al sistema global
 4- crear la aplicación Django con el nombre que desee
 - 'django-admin startapp core'
 
+5- agregar el nombre de la lista 'config.settings.INSTALLED_APPS' 
+
+6- Agregarel siguiente codigo a 'config.settings'
+''' import sys
+
+ 
+
+sys.path.append(str(BASE_DIR / "apps"))'''
+
+## establecer 'config.settings.SECRET_KEY' 
+'''
+from django.core.management.utils import get_random_secret_key
+
+SECRET_KEY = get_random_secret_key()
+'''
+
+## creando app cliente 
+- posicionarce en apps
+cd apps
+- crear app 'cliente' 
+ en terminal ->  'django-admin startapp cliente'
+
+- registra la app en settings.py 
+linea 51 
+INSTALLED_APP[
+    "core", #app que ya figuraba depues de crearla la escribimos
+    "cliente",
+]
+
+-copiar la urls de "core" en app "cliente"
+- seguidamente copiar el contenido de views.py de core en views de cliente
 
 
+- crear una carpeta "templates" para app cliente 
+- dentro de templates crear carpeta cliente
+- y copiar el index.html que tiene core dentro de la careta recien hecha llamada cliente que esta dentro 
+de templates( pero donde decia "INICIO" ya colocamos el nombre de "CLIENTE")
+
+IR A LAS URLS DE CONFIG
+y de igual formato como se ve el path de core
+copiarlo abajo y reemplasar los caracteres por los nombres de la app que estamos trabajando 
+app cliente 
+'''
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include(("core.urls", "core"))),
+    path("cliente/", include(("cliente.urls", "cliente"))),
+]
+'''
+a continuacion vamos a la terminal, vamos hacia atras con comando 
+cd.. windows
+cd .. linux 
+
+y una vez corroborado que estan en la carpeta project 
+ejecutar -> 'python manage.py runserver'
+
+ir a views.py de cliente y cambiar "core" (porque de ahi habiammos copiado)
+por "cliente"
+'''
+def index(request):
+    context = {"app_name": "VirtualPlanet"}
+    return render(request, "cliente/index.html", context)
+'''
+
+crea un boton (button)
+en la pag pricipal o sear en index.html de core
+"""
+"<button><a href="{% url 'cliente:index' %}">CLIENTE</a></button>"
+""" la clave cliente hace refernecia al nombre de la urls que figura en urls.py de  app config
+e index y el valor quese ve con el nombre index es de la urls que esta dentro de app cliente 
+
+-en el index de cliente podemos crear un boton que haga lo mismo spero en reversa , que vaya de cliente al inicio
+    '''<button><a href="{% url 'core:index' %}">inicio</a></button>'''
+    
+### crear base de datos
+
+crear archivo python pre-SQL:
+- 'python manage.py makemigrations'
+ese comando crear un archivo.py dentro de la carpeta migrations que no se va a tocar hasta mayor conocimiento,es la encargada de crear codigo en cadenas referente a la base de datos .
+
+crear SQL Y modificar base de datos:
+- 'python manage.py migrate'
+hs 01.31.50 aprox de video
+
+### crear super usuario
+- 'python manage.py createsuperuser'
+ cree el superusuario 
+ pero con el nombre de usuario brahim (porque habia creado el co admin y no me dejaba)
+ clave si es 123
+
+ para registrar los modelos que crfeaste anteriormente y se vean en admin
+ ir a admin.py de la carpeta que creaste para hacer la app en este caaso se llama cliente
+
+ 
