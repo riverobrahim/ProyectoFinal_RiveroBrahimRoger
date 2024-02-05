@@ -9,8 +9,8 @@ def index(request):
 
 def pais_list(request):
     paises = models.Pais.objects.all()
-    return render(request, "cliente/pais_list.htmal ", {"paises":paises })
+    return render(request, "cliente/pais_list.html", {"paises":paises})
 
 def cliente_list(request):
     clientes = models.Pais.objects.all()
-    return render(request, "cliente/cliente_list.htmal ", {"clientes":clientes })
+    return render(request, "cliente/cliente_list.html", {"clientes":clientes})
