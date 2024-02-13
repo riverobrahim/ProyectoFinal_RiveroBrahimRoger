@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VirtualPlanet</title>
+{% extends 'core/base.html' %}
 
-</head>
-<body>
+{% block title %}
+    | INICIO
+{% endblock title %}
 
-    <h1>Proyecto Final {{ app_name }}</h1>
+{% block content_title %}
+ VirtualPlanet
+{% endblock content_title %}
+
+{% block content %}
     <h2>INICIO</h2>
 
     <button><a href="{% url 'cliente:index' %}">Cliente</a></button> 
     <button><a href="{% url 'admin:index' %}">Administración</a></button>
+{% endblock content %}
 
 
-</body>
-</html>
+

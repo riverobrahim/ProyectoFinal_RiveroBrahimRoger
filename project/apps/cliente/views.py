@@ -4,13 +4,14 @@ from . import models
 
 
 def index(request):
-    context = {"app_name": "VirtualPlanet"}
-    return render(request,"cliente/index.html", context)
+    return render(request,"cliente/index.html")
 
 def pais_list(request):
     paises = models.Pais.objects.all()
-    return render(request, "cliente/pais_list.html", {"paises":paises})
+    context = {"paises": paises}
+    return render(request, "cliente/pais_list.html", context)
 
 def cliente_list(request):
-    clientes = models.Pais.objects.all()
-    return render(request, "cliente/cliente_list.html", {"clientes":clientes})
+    clientes = models.Cliente.objects.all()
+    context = {"clientes":clientes}
+    return render(request, "cliente/cliente_list.html", context)
