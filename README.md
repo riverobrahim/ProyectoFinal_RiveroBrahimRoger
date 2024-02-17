@@ -152,4 +152,47 @@ hs 01.31.50 aprox de video
  para registrar los modelos que crfeaste anteriormente y se vean en admin
  ir a admin.py de la carpeta que creaste para hacer la app en este caaso se llama cliente
 
+ ## escribir la funsion pra crear cliente
+ ...
+
+ ### usar archivos Bootstrap
+ crear carpeta en core llamada "static"
+ y dentro una carpeta "core"
+ descargar ahi los archivos extraidos de ña seleccion hecha en la pagina de bootstrap
+ "assets" contiene la trasparencia
+ "css" todo el lenguaje html 
+ "js" nada 
+
+ renombramos los arch hatml de templates usando conmo prefijo un guion bajo:
+ _base.html
+ _inddex.html
+ para que ?
+ para mover el index del archivo anteriormente extraido a core de templates
+  
+vas a entrar en index, el archivo que acabas de copiar y vas a ir a la linea 1 y colocar 
+ ###{% load static %} 
+ obviio sin los #  esto es para que el codigo cada ves que se encuentre con un static vaya a la direccion que vas a poner en la linea 14 donde dice donde buscar 
+ ###"{% static 'core/css/styles.css' %}" rel="stylesheet"
+ al igual que en la linea 12 
+ ###href="{% static 'core/assets/favicon.ico' %}"
+ tambien en la linea 85 
+ ###" {% static 'core/js/scripts.js' %}"></script>
+
+ todo los que son archivos 
+
+ ### asignar el index descargado como base, y desacer la base que teniamos
+ antes obviamente de la base anterior extraemos lo que necesitamos y ya creamos 
+ y lo colocamos donde va 
+
+###alternativas para colocar imagenes 
+una es la buscar un archivo de internet una imagen copiar vinculo y pegarla en el index line 21 
+la otra 
+en crear una carpeta en en core de static que se llame img , descargar las imagenes en formato webp y copiar en la linea 19 de index de esta manera #src="{% static 'core/img/apple_producto.webp' %}"
+recorda que la imagen debe de estar en formato webp
+ 
+
+
+
+
+
  
