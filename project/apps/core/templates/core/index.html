@@ -29,12 +29,13 @@
     </div>
     <!-- Content Row-->
     <div class="row gx-4 gx-lg-5">
-        {% include 'core/tarjeta.html' with titulo="tarjeta 1" texto="texto de tarjeta" %}
-        {% include 'core/tarjeta.html' with titulo="tarjeta 2" imagen_url="" %}
-        {% include 'core/tarjeta.html' %}
-        {% include 'core/tarjeta.html' %} 
-        {% include 'core/tarjeta.html' %}   
-        {% include 'core/tarjeta.html' %}   
+        {% include 'core/tarjeta.html' with titulo="AirPods" texto="Dos micrófonos con tecnología beamforming. Dos sensores ópticos. Acelerómetro con detección de movimiento. Acelerómetro con detección de voz" imagen_url='core/img/airpods.webp' %}
+        {% include 'core/tarjeta.html' with titulo="Iphone X XR 11 12 13 14 15" texto="iPhone es una línea de teléfonos inteligentes de alta gama diseñada y comercializada por Apple Inc. Ejecuta el sistema operativo móvil iOS" imagen_url="" %}
+        {% include 'core/tarjeta.html' with titulo="MacBook" texto="Rendimiento espectacular. Diseño muy cuidado. Software y hardware dedicado. macOS es completamente estable. Mayor productividad. " imagen_url="" %}
+        {% include 'core/tarjeta.html' with titulo="tarjeta 1" texto="texto de tarjeta" imagen_url="" %}
+        {% include 'core/tarjeta.html' with titulo="tarjeta 1" texto="texto de tarjeta" imagen_url="" %}
+
+      
 
     </div>
 {% endblock content %}
