@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    | Producto
+{% endblock title %}
+
+{% block content_title %}
+    PRODUCTO
+{% endblock content_title %}
+
+{% block content %}
+
+
+
+    <div class="card text-center">
+        <div class="card-body">
+            <h2 class="card-title">Categoria de Producto</h2>
+            <div class="d-flex justify-content-center gap-4">            
+                <a class="btn btn-primary w-50" href="{% url 'core:index' %}">inicio</a>
+            </div>    
+        </div>
+    </div>
+
+
+    
+{% endblock content %}
