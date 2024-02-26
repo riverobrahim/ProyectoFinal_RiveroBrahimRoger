@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Categoria de Productos
+{% endblock title %}
+
+{% block content %}
+
+    <div class="mb-4">
+        <form > 
+            <input type="text" name="consulta" type="submit" placeholder="Buscar Categoria">
+        </form>
+    </div>
+
+    {% for categoria in object_list %}
+        <ul>
+            <li>{{categoria.nombre}}</li>
+            <a href="{% url 'producto:productocategoria_update' categoria.id %}">Modificar</a>
+            <a href="{% url 'producto:productocategoria_delete' categoria.id %}">Eliminar</a>
+            <a href="{% url 'producto:productocategoria_detail' categoria.id %}">Detalle</a>
+
+        </ul>
+    {% endfor %}
+
+    
+{% endblock content %}

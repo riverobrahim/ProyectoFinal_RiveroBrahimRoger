@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Borrar Categoria
+{% endblock title %}
+
+{% block content %}
+
+   <form method="post">
+        {% csrf_token %}
+        <p>¿Estas seguro de eliminar? {{object.nombre}}</p>
+        <button type="submit">SI</button>
+   </form>
+   
+    
+{% endblock content %}
