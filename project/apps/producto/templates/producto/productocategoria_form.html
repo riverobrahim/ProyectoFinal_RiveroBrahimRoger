@@ -1,15 +1,26 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-    Crear Categoria
+| Producto | Categoria    
 {% endblock title %}
+
+{% block content_title %}
+    {% if form.instance.pk %}
+        Editar
+    {% else %}
+        Crear
+    {% endif %}
+        Categoria    
+{% endblock content_title %}
 
 {% block content %}
 
-   <form method="post">
+   <form method="post" class="form-control">    
         {% csrf_token %}
         {{ form }}
-        <button type="submit">Guardar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>+
+        <a href="{% url 'producto:productocategoria_list' %}" class="btn btn-secondary">Cancelar</a>
+        
    </form>
    
     

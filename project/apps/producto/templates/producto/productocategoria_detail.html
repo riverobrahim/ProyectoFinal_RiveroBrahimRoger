@@ -1,13 +1,28 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-    Detalle
+   | Producto | Categoria 
 {% endblock title %}
+
+{% block content_title %}
+   Detalle de Categoria de Producto 
+{% endblock content_title %}
 
 {% block content %}
 
-    <p>{{ object.id }}</p>
-    <p>{{ object.nombre }}</p>
-    <p>{{ object.descripcion }}</p>
+    <div class="container">
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">{{ object.nombre}}</h5>
+                <p class="card-text">{{ object.descripcion}} </p>
+            </div>
+        </div>
 
+        <div class="card mt-4">
+            <a href="{% url 'producto:productocategoria_update' object.id %}" class="btn btn-warning">Editar</a>
+            <a href="{% url 'producto:productocategoria_delete' object.id %}" class="btn btn-danger">Eliminar</a>
+            <a href="{% url 'producto:productocategoria_list' %}" class="btn btn-primary">Volver a la Lista</a>
+        </div>
+    </div>        
+    
 {% endblock content %}

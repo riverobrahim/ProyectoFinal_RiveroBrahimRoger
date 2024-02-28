@@ -1,16 +1,32 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-    Borrar Categoria
+   | Producto | Categoria 
 {% endblock title %}
+
+{% block content_title %}
+    Confirmar Eliminacion de Categoria 
+{% endblock content_title %}
 
 {% block content %}
 
-   <form method="post">
-        {% csrf_token %}
-        <p>¿Estas seguro de eliminar? {{object.nombre}}</p>
-        <button type="submit">SI</button>
-   </form>
-   
+   <div class="container">
+    <h1 class="mt-4"></h1>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">¿estas seguro de que deseas eliminar la categoria"{{ object.nombre}}"?</h5>
+                <p class="card-text">Esta accion no se puede deshacer.</p>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                <a href="{% url 'producto:productocategoria_detail' object.id %}" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+   </div>
     
 {% endblock content %}
