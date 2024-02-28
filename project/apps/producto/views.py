@@ -6,7 +6,7 @@ UpdateView,
 DeleteView,
 DetailView,
 )
-
+from django.contrib.auth.mixins import LoginRequiredMixin 
 from .models import *
 from .forms import * 
   
@@ -45,7 +45,7 @@ class ProductoCategoriaList(ListView):
         
   
         
-class ProductoCategoriaCreate(CreateView):
+class ProductoCategoriaCreate(LoginRequiredMixin, CreateView):
     model = ProductoCategoria
     form_class = ProductoCategoriaForm
     success_url = reverse_lazy("producto:productocategoria_list")         
@@ -62,7 +62,7 @@ class ProductoCategoriaCreate(CreateView):
 #    return render(request, "producto/productocategoria_form.html", {"form" : form})
 
 
-class ProductoCategoriaUpdate(UpdateView):
+class ProductoCategoriaUpdate(LoginRequiredMixin, UpdateView):
     model = ProductoCategoria
     form_class = ProductoCategoriaForm
     success_url = reverse_lazy("producto:productocategoria_list")
@@ -75,7 +75,7 @@ class ProductoCategoriaUpdate(UpdateView):
 #        return redirect("producto:productocategoria_list")
 #    return render(request, "producto/productocategoria_confirm_delete.html", {"object" : consulta }) 
 
-class ProductoCategoriaDelete(DeleteView):
+class ProductoCategoriaDelete(LoginRequiredMixin, DeleteView):
     model = ProductoCategoria
     success_url = reverse_lazy("producto:productocategoria_list")  
     
